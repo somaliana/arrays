@@ -28,4 +28,9 @@ int main() {
         }
     }
     printf("%d", count);
+    for (int i = 0; i < n; i++) {
+        free(A[i]);
+    }
+    return 0;
 }
+

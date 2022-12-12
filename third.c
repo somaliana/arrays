@@ -29,9 +29,13 @@ int main() {
     }
     if (max == 0) {
         printf("There was none.. = (");
-        return 0;
+        
     }
     printf("%d", max);
+    for (int i = 0; i < n; i++) {
+        free(A[i]);
+    }
+    return 0;
 }
 
     

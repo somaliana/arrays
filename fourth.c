@@ -26,18 +26,11 @@ int main() {
             }
         }
     }
+    
     for (int i = 1; i < n; i++) { 
-        for (int m = 0; m <=p;m++) {
-            for (int j = 0; j < m; j++) {
-                if (A[i][j]!=repeated[m]) {
-                    break;
-                }
-                else {
-                    printf("%d", A[i][j]);
-                }
-            }
-        }
+        
     }
+
 }
 
 

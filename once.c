@@ -25,5 +25,9 @@ int main() {
     }
     double result = sum/count;
     printf("%lf", result);
+    for (int i = 0; i < n; i++) {
+        free(A[i]);
+    }
+    return 0;
     
 }
