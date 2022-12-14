@@ -4,7 +4,7 @@
 int main() {
     int **A; 
     int n,m;
-    int repeated[m];
+    
     printf("Enter the size of symmetrical matix: ");
     scanf("%d %d",&n, &m);
     A = (int**)malloc(n*sizeof(int*));
@@ -15,21 +15,36 @@ int main() {
             scanf("%d", &A[i][j]);
         }
     }
-    int p = 0;
-    
-    for (int j=0; j<m;j++) {
-        for (int k =j+1; k < m;k++) {
-            if (A[0][j]  == A[0][k]) {
-                repeated[p] = A[0][j];
-                p++;
-                break;
+    double count = 0;
+    double sum = 0;
+    for (int i = 0; i < n; i++) {
+        int maxIndex = 0;
+        int max = -100; 
+        for (int j = 0; j < m; j++) {
+            if (A[i][j] > max) {
+                max = A[i][j];
+                maxIndex = m - j;
+
+            }     
+        }
+        int minIndex = 0;
+        int min = 10000000;
+        for (int k = 0; k < m; k++) {
+            if (A[i][k]< min) {
+                min = A[i][k];
+                minIndex = m - k;
             }
         }
-    }
-    
-    for (int i = 1; i < n; i++) { 
+        if (maxIndex > minIndex) {
+            for (int j = 0; j < m; j++) {
+                sum+= A[i][j];
+                count++;
+            }
+        }
         
     }
+    printf("%lf", sum/count);
+    
 
 }
 
